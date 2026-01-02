@@ -15,7 +15,7 @@ This section covers exam logistics, preparation strategies, and the AWS certific
 
 ## Core Concepts
 
-### [[MLA-C01-Exam-Details]]
+### MLA-C01-Exam-Details
 
 **Exam Specifications:**
 | Aspect | Detail |
@@ -34,7 +34,7 @@ This section covers exam logistics, preparation strategies, and the AWS certific
 
 ---
 
-### [[Question-Types]]
+### Question-Types
 
 **Traditional Question Types:**
 | Type | Format | Scoring |
@@ -53,7 +53,7 @@ This section covers exam logistics, preparation strategies, and the AWS certific
 
 ---
 
-### [[Exam-Domains]]
+### Exam-Domains
 
 **Exam Content Outline:**
 | Domain | Weight |
@@ -67,7 +67,7 @@ This section covers exam logistics, preparation strategies, and the AWS certific
 
 ## Preparation Resources
 
-### [[AWS-Skill-Builder]]
+### AWS-Skill-Builder
 **Purpose:** Official AWS training platform
 
 **Free Resources:**
@@ -82,7 +82,7 @@ This section covers exam logistics, preparation strategies, and the AWS certific
 
 ---
 
-### [[Key-Documentation]]
+### Key-Documentation
 
 | Resource | Purpose |
 |----------|---------|
@@ -95,7 +95,7 @@ This section covers exam logistics, preparation strategies, and the AWS certific
 
 ## Test-Taking Strategies
 
-### [[Exam-Day-Strategies]]
+### Exam-Day-Strategies
 
 **Pacing:**
 - Target: 2-2.5 minutes per question
@@ -120,7 +120,7 @@ For each question, understand:
 
 ---
 
-### [[Pre-Exam-Preparation]]
+### Pre-Exam-Preparation
 
 **Day Before:**
 - Review key formulas (Recall, Precision, F1)
@@ -146,7 +146,7 @@ For each question, understand:
 
 ## AWS Certification Journey
 
-### [[Certification-Levels]]
+### Certification-Levels
 
 | Level | Description | Experience |
 |-------|-------------|------------|
@@ -157,7 +157,7 @@ For each question, understand:
 
 ---
 
-### [[ML-Engineer-Certification-Path]]
+### ML-Engineer-Certification-Path
 
 **Recommended Path for ML Engineers:**
 
@@ -185,7 +185,7 @@ For each question, understand:
 
 ---
 
-### [[Related-Certifications]]
+### Related-Certifications
 
 | Certification | Level | Relevance to ML |
 |--------------|-------|-----------------|
@@ -200,7 +200,7 @@ For each question, understand:
 
 ## Key Topics to Memorize
 
-### [[Must-Know-Formulas]]
+### Must-Know-Formulas
 
 **Classification Metrics:**
 ```
@@ -219,7 +219,7 @@ Actual  Pos   TP      FN
 
 ---
 
-### [[Must-Know-Techniques]]
+### Must-Know-Techniques
 
 **Regularization:**
 | Technique | Effect | Use Case |

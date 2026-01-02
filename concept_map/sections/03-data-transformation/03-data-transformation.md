@@ -7,7 +7,7 @@ This section covers data processing services (EMR, Glue, Athena), feature engine
 
 ## Core Concepts
 
-### [[Feature Engineering]]
+### Feature Engineering
 
 The process of applying domain knowledge to create better features for ML models.
 
@@ -24,13 +24,13 @@ The process of applying domain knowledge to create better features for ML models
 
 **"Applied machine learning is basically feature engineering" - Andrew Ng**
 
-### [[The Curse of Dimensionality]]
+### The Curse of Dimensionality
 - Too many features → sparse data → poor performance
 - Solutions: Feature selection, PCA, K-Means clustering
 
 ---
 
-### [[Handling Missing Data]]
+### Handling Missing Data
 
 | Strategy | Description | Pros | Cons |
 |----------|-------------|------|------|
@@ -44,7 +44,7 @@ The process of applying domain knowledge to create better features for ML models
 
 ---
 
-### [[Handling Unbalanced Data]]
+### Handling Unbalanced Data
 
 | Technique | Description | When to Use |
 |-----------|-------------|-------------|
@@ -60,13 +60,13 @@ The process of applying domain knowledge to create better features for ML models
 
 ---
 
-### [[Outlier Detection]]
+### Outlier Detection
 
 **Statistical Methods:**
 - Standard deviation: Points > X σ from mean
 - Variance: Measures data spread
 
-**AWS Algorithm:** [[Random Cut Forest]] (RCF)
+**AWS Algorithm:** Random Cut Forest (RCF)
 - Found in: QuickSight, Kinesis Analytics, SageMaker
 - Assigns anomaly score to each data point
 
@@ -78,7 +78,7 @@ The process of applying domain knowledge to create better features for ML models
 
 ---
 
-### [[Scaling/Normalization]]
+### Scaling/Normalization
 
 | Method | Formula | Range | Use Case |
 |--------|---------|-------|----------|
@@ -91,7 +91,7 @@ The process of applying domain knowledge to create better features for ML models
 
 ## Big Data Processing Services
 
-### [[Amazon EMR]] - Elastic MapReduce
+### Amazon EMR - Elastic MapReduce
 
 **What:** Managed Hadoop framework on EC2
 
@@ -117,7 +117,7 @@ The process of applying domain knowledge to create better features for ML models
 
 ---
 
-### [[EMR Serverless]]
+### EMR Serverless
 
 - Choose EMR Release and Runtime (Spark, Hive, Presto)
 - EMR manages underlying capacity automatically
@@ -127,7 +127,7 @@ The process of applying domain knowledge to create better features for ML models
 
 ---
 
-### [[EMR on EKS]]
+### EMR on EKS
 
 - Run Spark jobs on Elastic Kubernetes Service
 - Share resources between Spark and other K8s apps
@@ -135,7 +135,7 @@ The process of applying domain knowledge to create better features for ML models
 
 ---
 
-### [[Apache Spark]]
+### Apache Spark
 
 **Components:**
 
@@ -153,7 +153,7 @@ The process of applying domain knowledge to create better features for ML models
 
 ---
 
-### [[AWS Glue]]
+### AWS Glue
 
 **Purpose:** Serverless ETL and data catalog service
 
@@ -173,7 +173,7 @@ The process of applying domain knowledge to create better features for ML models
 
 ---
 
-### [[AWS Glue DataBrew]]
+### AWS Glue DataBrew
 
 **Purpose:** Visual data preparation tool
 
@@ -190,7 +190,7 @@ The process of applying domain knowledge to create better features for ML models
 
 ---
 
-### [[Amazon Athena]]
+### Amazon Athena
 
 **Purpose:** Serverless SQL queries on S3 data
 
@@ -217,17 +217,17 @@ The process of applying domain knowledge to create better features for ML models
 
 ## SageMaker Services
 
-### [[SageMaker Notebooks]]
+### SageMaker Notebooks
 - EC2-based Jupyter notebooks
 - Pre-installed: Scikit-learn, TensorFlow, PyTorch, Spark
 - Direct S3 access
 
-### [[SageMaker Processing]]
+### SageMaker Processing
 - Run data processing workloads
 - Input: `/opt/ml/processing/input`
 - Output: `/opt/ml/processing/output`
 
-### [[SageMaker Ground Truth]]
+### SageMaker Ground Truth
 **Purpose:** Generate labeled training data
 
 **How It Works:**
@@ -239,11 +239,11 @@ The process of applying domain knowledge to create better features for ML models
 
 **Labeler Sources:** Mechanical Turk, Internal team, Professional companies
 
-### [[SageMaker Ground Truth Plus]]
+### SageMaker Ground Truth Plus
 - Turnkey managed solution
 - AWS experts manage workflow
 
-### [[SageMaker Data Wrangler]]
+### SageMaker Data Wrangler
 **Purpose:** Visual data preparation in SageMaker Studio
 
 **Features:**
@@ -252,7 +252,7 @@ The process of applying domain knowledge to create better features for ML models
 - "Quick Model" for rapid evaluation
 - Balance data, handle missing values, detect outliers
 
-### [[SageMaker Model Monitor]]
+### SageMaker Model Monitor
 **Purpose:** Monitor deployed models
 
 **Detects:**
@@ -261,7 +261,7 @@ The process of applying domain knowledge to create better features for ML models
 - Outliers
 - Schema changes
 
-### [[SageMaker Clarify]]
+### SageMaker Clarify
 **Purpose:** Bias detection and model explainability
 
 **Pre-Training Bias Metrics:**
@@ -272,7 +272,7 @@ The process of applying domain knowledge to create better features for ML models
 
 **Explainability:** SHAP values, Partial Dependence Plots
 
-### [[SageMaker Feature Store]]
+### SageMaker Feature Store
 **Purpose:** Centralized feature repository
 
 | Store Type | Latency | Use Case |
@@ -280,7 +280,7 @@ The process of applying domain knowledge to create better features for ML models
 | **Online Store** | Single-digit ms | Real-time inference |
 | **Offline Store** | Higher | Training, batch processing |
 
-### [[SageMaker Canvas]]
+### SageMaker Canvas
 - No-code ML for business analysts
 - Natural language or visual model building
 
@@ -288,12 +288,12 @@ The process of applying domain knowledge to create better features for ML models
 
 ## Model Explainability
 
-### [[SHAP]] (SHapley Additive exPlanations)
+### SHAP (SHapley Additive exPlanations)
 - Based on game theory
 - Shows feature contribution to predictions
 - Both local (single prediction) and global (overall) explanations
 
-### [[Partial Dependence Plots]] (PDPs)
+### Partial Dependence Plots (PDPs)
 - Show relationship between feature and prediction
 - Marginal effect of one feature
 
@@ -374,8 +374,8 @@ The process of applying domain knowledge to create better features for ML models
 ---
 
 ## Related Sections
-- [[02-data-ingestion]] - S3, Kinesis, streaming data
-- [[04-managed-ai-services]] - Rekognition, Comprehend
-- [[05-sagemaker-algorithms]] - Built-in algorithms
-- [[06-model-training]] - Training techniques
-- [[09-mlops]] - Pipelines and automation
+- [[02-data-ingestion/02-data-ingestion]] - S3, Kinesis, streaming data
+- [[04-managed-ai-services/04-managed-ai-services]] - Rekognition, Comprehend
+- [[05-sagemaker-algorithms/05-sagemaker-algorithms]] - Built-in algorithms
+- [[06-model-training/06-model-training]] - Training techniques
+- [[09-mlops/09-mlops]] - Pipelines and automation

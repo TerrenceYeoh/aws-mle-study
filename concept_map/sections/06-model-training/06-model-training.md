@@ -16,7 +16,7 @@ This section covers deep learning fundamentals, neural network architectures, mo
 
 ## Core Concepts
 
-### [[Deep-Learning-Fundamentals]]
+### Deep-Learning-Fundamentals
 
 **Biological Inspiration:**
 - Neurons connected via axons, fire when threshold reached
@@ -24,15 +24,15 @@ This section covers deep learning fundamentals, neural network architectures, mo
 - Layers of neurons yield learning behavior
 
 **Frameworks:**
-- [[TensorFlow]] / [[Keras]] - Popular, high-level API
-- [[MXNet]] - AWS preferred framework
-- [[PyTorch]] - Widely used for research
+- TensorFlow / Keras - Popular, high-level API
+- MXNet - AWS preferred framework
+- PyTorch - Widely used for research
 
-**Related:** [[Neural-Networks]], [[Activation-Functions]], [[GPU-Instances]]
+**Related:** Neural-Networks, Activation-Functions, GPU-Instances
 
 ---
 
-### [[Neural-Network-Types]]
+### Neural-Network-Types
 
 | Type | Use Case | Key Feature |
 |------|----------|-------------|
@@ -42,11 +42,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 | **LSTM/GRU** | Long sequences | Handles vanishing gradient |
 | **Transformer** | NLP, modern AI | Self-attention mechanism |
 
-**Related:** [[CNN]], [[RNN]], [[Transformers]], [[Transfer-Learning]]
+**Related:** CNN, [[07-genai-fundamentals/07-genai-fundamentals#RNN]], [[07-genai-fundamentals/07-genai-fundamentals#Transformers]], [[07-genai-fundamentals#Transfer-Learning]]
 
 ---
 
-### [[Activation-Functions]]
+### Activation-Functions
 
 **Purpose:** Define output given input signals; enable backpropagation
 
@@ -63,11 +63,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 - **Vanishing Gradient:** Sigmoid/TanH change slowly at extremes
 - **Dying ReLU:** Negative inputs produce 0, neuron stops learning
 
-**Related:** [[Vanishing-Gradient]], [[Backpropagation]]
+**Related:** Vanishing-Gradient, Backpropagation
 
 ---
 
-### [[CNN-Architecture]]
+### CNN-Architecture
 
 **Convolutional Neural Networks for Image Processing**
 
@@ -86,11 +86,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 | **GoogLeNet** | Inception modules |
 | **ResNet** | Skip connections |
 
-**Related:** [[Image-Classification]], [[Dropout]], [[MaxPooling]]
+**Related:** Image-Classification, [[06-model-training/06-model-training#Dropout]], MaxPooling
 
 ---
 
-### [[RNN-Architecture]]
+### RNN-Architecture
 
 **Recurrent Neural Networks for Sequential Data**
 
@@ -106,11 +106,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 
 **Training:** Backpropagation Through Time (BPTT)
 
-**Related:** [[LSTM]], [[GRU]], [[Transformers]]
+**Related:** [[07-genai-fundamentals/07-genai-fundamentals#LSTM]], GRU, [[07-genai-fundamentals/07-genai-fundamentals#Transformers]]
 
 ---
 
-### [[Transformers]]
+### Transformers
 
 **Modern NLP Architecture with Self-Attention**
 
@@ -128,11 +128,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 | **GPT** | Generative pre-trained |
 | **DistilBERT** | 40% smaller (knowledge distillation) |
 
-**Related:** [[Transfer-Learning]], [[Hugging-Face]], [[Fine-Tuning]]
+**Related:** [[07-genai-fundamentals#Transfer-Learning]], [[08-bedrock-applications/08-bedrock-applications#Hugging-Face]], [[07-genai-fundamentals/07-genai-fundamentals#Fine-Tuning]]
 
 ---
 
-### [[Transfer-Learning]]
+### Transfer-Learning
 
 **Leverage Pre-trained Models**
 
@@ -148,11 +148,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 | Retrain from scratch | Different data + compute capacity |
 | Use as-is | Training data already matches |
 
-**Related:** [[BERT]], [[Hugging-Face]], [[SageMaker-DLC]]
+**Related:** [[07-genai-fundamentals/07-genai-fundamentals#BERT]], [[08-bedrock-applications/08-bedrock-applications#Hugging-Face]], SageMaker-DLC
 
 ---
 
-### [[Regularization]]
+### Regularization
 
 **Preventing Overfitting**
 
@@ -166,22 +166,22 @@ This section covers deep learning fundamentals, neural network architectures, mo
 | **L1 (Lasso)** | Sparse output, feature selection |
 | **L2 (Ridge)** | Dense output, all features retained |
 
-**Related:** [[Overfitting]], [[Dropout]], [[L1-L2-Regularization]]
+**Related:** Overfitting, [[06-model-training/06-model-training#Dropout]], L1-L2-Regularization
 
 ---
 
-### [[Gradient-Problems]]
+### Gradient-Problems
 
 | Problem | Description | Solutions |
 |---------|-------------|-----------|
 | **Vanishing Gradient** | Slope approaches zero | LSTM, ResNet, ReLU |
 | **Exploding Gradient** | Gradients too large | Gradient clipping |
 
-**Related:** [[LSTM]], [[ResNet]], [[ReLU]]
+**Related:** [[07-genai-fundamentals/07-genai-fundamentals#LSTM]], ResNet, ReLU
 
 ---
 
-### [[Model-Evaluation-Metrics]]
+### Model-Evaluation-Metrics
 
 **Classification Metrics:**
 | Metric | Formula | Use When |
@@ -193,13 +193,13 @@ This section covers deep learning fundamentals, neural network architectures, mo
 
 **Regression Metrics:** R-squared, RMSE, MAE
 
-**Related:** [[Confusion-Matrix]], [[ROC-Curve]], [[Precision-Recall]]
+**Related:** Confusion-Matrix, ROC-Curve, Precision-Recall
 
 ---
 
 ## AWS Services
 
-### [[SageMaker-AMT]]
+### SageMaker-AMT
 
 **Automatic Model Tuning (Hyperparameter Optimization)**
 
@@ -221,11 +221,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 
 **Features:** Early stopping, Warm start, Resource limits
 
-**Related:** [[Hyperparameter-Tuning]], [[SageMaker-Autopilot]]
+**Related:** Hyperparameter-Tuning, SageMaker-Autopilot
 
 ---
 
-### [[SageMaker-Autopilot]]
+### SageMaker-Autopilot
 
 **AutoML - Fully Automated ML Pipeline**
 
@@ -240,28 +240,28 @@ This section covers deep learning fundamentals, neural network architectures, mo
 | Ensembling | AutoGluon stacking (10 trials) |
 | Auto | Ensembling <100MB, HPO >100MB |
 
-**Integrates with:** [[SageMaker-Clarify]] for explainability (SHAP values)
+**Integrates with:** [[12-ml-best-practices#SageMaker-Clarify]] for explainability (SHAP values)
 
-**Related:** [[AMT]], [[SageMaker-Clarify]], [[SHAP]]
+**Related:** AMT, [[12-ml-best-practices#SageMaker-Clarify]], SHAP
 
 ---
 
-### [[SageMaker-Studio]]
+### SageMaker-Studio
 
 **Visual IDE for ML**
 
 **Components:**
-- [[SageMaker-Notebooks]] - Jupyter notebooks with dynamic hardware
-- [[SageMaker-Experiments]] - Track and compare ML jobs
-- [[SageMaker-Debugger]] - Monitor training, detect issues
-- [[SageMaker-Model-Registry]] - Version and deploy models
-- [[TensorBoard]] - Visualization integration
+- SageMaker-Notebooks - Jupyter notebooks with dynamic hardware
+- [[12-ml-best-practices#SageMaker-Experiments]] - Track and compare ML jobs
+- [[06-model-training/06-model-training#SageMaker-Debugger]] - Monitor training, detect issues
+- [[09-mlops/09-mlops#Model-Registry]] - Version and deploy models
+- TensorBoard - Visualization integration
 
-**Related:** [[Jupyter]], [[MLOps]]
+**Related:** Jupyter, [[09-mlops/09-mlops]]
 
 ---
 
-### [[SageMaker-Debugger]]
+### SageMaker-Debugger
 
 **Monitor and Debug Training Jobs**
 
@@ -277,11 +277,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 
 **Supported:** TensorFlow, PyTorch, MXNet, XGBoost
 
-**Related:** [[CloudWatch]], [[Training-Jobs]]
+**Related:** [[11-management-governance#CloudWatch]], Training-Jobs
 
 ---
 
-### [[SageMaker-Training-Compiler]]
+### SageMaker-Training-Compiler
 
 **Hardware-Optimized Training**
 
@@ -292,11 +292,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 - **NOT compatible with distributed training libraries**
 - **No longer maintained**
 
-**Related:** [[Deep-Learning-Containers]], [[Hugging-Face]]
+**Related:** Deep-Learning-Containers, [[08-bedrock-applications/08-bedrock-applications#Hugging-Face]]
 
 ---
 
-### [[SageMaker-Distributed-Training]]
+### SageMaker-Distributed-Training
 
 **Scale Training Across Multiple GPUs/Instances**
 
@@ -309,11 +309,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 
 **Best Practice:** Max out single instance before multiple instances
 
-**Related:** [[SageMaker-DDP]], [[SageMaker-MPP]], [[EFA]]
+**Related:** SageMaker-DDP, SageMaker-MPP, [[06-model-training/06-model-training#EFA]]
 
 ---
 
-### [[SageMaker-DDP]]
+### SageMaker-DDP
 
 **Distributed Data Parallelism Library**
 
@@ -325,11 +325,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 
 **NOT compatible with:** Training Compiler
 
-**Related:** [[PyTorch-DDP]], [[Horovod]], [[DeepSpeed]]
+**Related:** PyTorch-DDP, Horovod, DeepSpeed
 
 ---
 
-### [[SageMaker-MPP]]
+### SageMaker-MPP
 
 **Model Parallelism Library (for LLMs >1B parameters)**
 
@@ -342,11 +342,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 
 **Framework:** PyTorch only
 
-**Related:** [[LLM-Training]], [[Sharded-Data-Parallelism]], [[MiCS]]
+**Related:** LLM-Training, Sharded-Data-Parallelism, MiCS
 
 ---
 
-### [[Training-Infrastructure]]
+### Training-Infrastructure
 
 **Warm Pools:**
 - Retain infrastructure for repeated training
@@ -363,11 +363,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 - NCCL verification
 - Automatic instance replacement
 
-**Related:** [[S3]], [[EC2-Instances]]
+**Related:** [[02-data-ingestion#Amazon-S3]], EC2-Instances
 
 ---
 
-### [[EC2-GPU-Instances]]
+### EC2-GPU-Instances
 
 | Instance | Hardware | Use Case |
 |----------|----------|----------|
@@ -378,11 +378,11 @@ This section covers deep learning fundamentals, neural network architectures, mo
 | **Inf2** | AWS Inferentia2 | Inference |
 | **G3/G5g** | M60/T4G | Graphics/ML |
 
-**Related:** [[EFA]], [[Distributed-Training]]
+**Related:** [[06-model-training/06-model-training#EFA]], [[06-model-training/06-model-training#Distributed-Training]]
 
 ---
 
-### [[EFA]]
+### EFA
 
 **Elastic Fabric Adapter**
 
@@ -396,7 +396,7 @@ This section covers deep learning fundamentals, neural network architectures, mo
 - Include NCCL, EFA, AWS OFI NCCL plugin
 - Set `FI_PROVIDER="efa"`
 
-**Related:** [[Distributed-Training]], [[P4de-Instances]]
+**Related:** [[06-model-training/06-model-training#Distributed-Training]], P4de-Instances
 
 ---
 

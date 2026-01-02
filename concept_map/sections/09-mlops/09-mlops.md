@@ -17,7 +17,7 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 
 ## Core Concepts
 
-### [[Deployment-Safeguards]]
+### Deployment-Safeguards
 
 **Deployment Guardrails:**
 - For asynchronous or real-time inference endpoints
@@ -36,11 +36,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 - Production traffic mirrored to shadow (no user impact)
 - Decide when to promote based on metrics
 
-**Related:** [[Production-Variants]], [[Model-Monitor]], [[CloudWatch]]
+**Related:** Production-Variants, [[12-ml-best-practices/12-ml-best-practices#SageMaker-Model-Monitor]], [[11-management-governance#CloudWatch]]
 
 ---
 
-### [[SageMaker-Docker]]
+### SageMaker-Docker
 
 **Key Concept:** All models in SageMaker are hosted in Docker containers
 
@@ -73,11 +73,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 └── model/<model files>
 ```
 
-**Related:** [[Amazon-ECR]], [[SageMaker-Containers-Library]]
+**Related:** [[09-mlops/09-mlops#ECR]], SageMaker-Containers-Library
 
 ---
 
-### [[SageMaker-Containers-Library]]
+### SageMaker-Containers-Library
 
 **Purpose:** Make containers compatible with SageMaker
 
@@ -91,11 +91,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 | SM_CHANNELS / SM_CHANNEL_* | Data channels |
 | SM_HPS / SM_HP_* | Hyperparameters |
 
-**Related:** [[Docker]], [[Amazon-ECR]]
+**Related:** [[09-mlops/09-mlops#Docker]], [[09-mlops/09-mlops#ECR]]
 
 ---
 
-### [[Production-Variants]]
+### Production-Variants
 
 **Purpose:** Test multiple models on live traffic (A/B testing)
 
@@ -104,11 +104,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 - Roll out new model at 10%, ramp to 100% when confident
 - Offline validation isn't always sufficient
 
-**Related:** [[Shadow-Tests]], [[Deployment-Guardrails]]
+**Related:** Shadow-Tests, Deployment-Guardrails
 
 ---
 
-### [[SageMaker-Neo]]
+### SageMaker-Neo
 
 **Purpose:** Train once, run anywhere (edge optimization)
 
@@ -128,11 +128,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 - HTTPS endpoint (must match compilation instance type)
 - **IoT Greengrass** for actual edge devices
 
-**Related:** [[IoT-Greengrass]], [[Edge-Deployment]]
+**Related:** IoT-Greengrass, Edge-Deployment
 
 ---
 
-### [[Inference-Types]]
+### Inference-Types
 
 | Type | Description | Best For |
 |------|-------------|----------|
@@ -145,11 +145,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 - Scales down to zero (cold starts possible)
 - CloudWatch metrics: ModelSetupTime, Invocations, MemoryUtilization
 
-**Related:** [[SageMaker-Endpoints]], [[Auto-Scaling]]
+**Related:** SageMaker-Endpoints, [[06-model-training/06-model-training#Auto-Scaling]]
 
 ---
 
-### [[SageMaker-Inference-Recommender]]
+### SageMaker-Inference-Recommender
 
 **Purpose:** Recommend optimal instance type & configuration
 
@@ -165,11 +165,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 | **Instance Recommendations** | ~45 min | Load tests on recommended types |
 | **Endpoint Recommendations** | ~2 hours | Custom load test with your requirements |
 
-**Related:** [[Model-Registry]], [[Instance-Types]]
+**Related:** [[09-mlops/09-mlops#Model-Registry]], Instance-Types
 
 ---
 
-### [[Inference-Pipelines]]
+### Inference-Pipelines
 
 **Definition:** Linear sequence of 2-15 containers
 
@@ -178,11 +178,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 - Supports Spark ML (MLeap format) and scikit-learn
 - Works with real-time and batch transforms
 
-**Related:** [[Batch-Transform]], [[Feature-Engineering]]
+**Related:** Batch-Transform, Feature-Engineering
 
 ---
 
-### [[SageMaker-Model-Monitor]]
+### SageMaker-Model-Monitor
 
 **Purpose:** Monitor deployed models for quality deviations
 
@@ -207,11 +207,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 
 **Visualization:** Tensorboard, QuickSight, Tableau, SageMaker Studio
 
-**Related:** [[SageMaker-Clarify]], [[CloudWatch]], [[Data-Drift]]
+**Related:** [[12-ml-best-practices#SageMaker-Clarify]], [[11-management-governance#CloudWatch]], Data-Drift
 
 ---
 
-### [[SageMaker-Clarify]]
+### SageMaker-Clarify
 
 **Purpose:** Detect bias and explain model behavior
 
@@ -230,11 +230,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 | Kolmogorov-Smirnov | KS | Maximum divergence between distributions |
 | Conditional Demographic Disparity | CDD | Disparity by subgroups |
 
-**Related:** [[Model-Monitor]], [[Fairness]], [[Explainability]]
+**Related:** [[12-ml-best-practices/12-ml-best-practices#SageMaker-Model-Monitor]], Fairness, Explainability
 
 ---
 
-### [[SageMaker-Projects]]
+### SageMaker-Projects
 
 **Purpose:** SageMaker Studio's native MLOps solution with CI/CD
 
@@ -251,13 +251,13 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 - CodePipeline for model build/deploy
 - CloudFormation for endpoint deployment
 
-**Related:** [[MLOps]], [[CI-CD]], [[Model-Registry]]
+**Related:** [[09-mlops/09-mlops]], [[09-mlops/09-mlops#CI-CD]], [[09-mlops/09-mlops#Model-Registry]]
 
 ---
 
 ## AWS Services
 
-### [[Amazon-ECS]]
+### Amazon-ECS
 
 **Amazon Elastic Container Service**
 
@@ -281,11 +281,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 - **Fargate + EFS = Serverless**
 - S3 cannot be mounted as file system
 
-**Related:** [[Fargate]], [[ECR]], [[EKS]]
+**Related:** [[09-mlops/09-mlops#Fargate]], [[09-mlops#ECR]], [[09-mlops/09-mlops#EKS]]
 
 ---
 
-### [[Amazon-EKS]]
+### Amazon-EKS
 
 **Amazon Elastic Kubernetes Service**
 
@@ -304,11 +304,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 
 **Data Volumes:** EBS, EFS (Fargate), FSx for Lustre, FSx for NetApp ONTAP
 
-**Related:** [[Kubernetes]], [[ECS]], [[Fargate]]
+**Related:** Kubernetes, [[09-mlops#ECS]], [[09-mlops/09-mlops#Fargate]]
 
 ---
 
-### [[Amazon-ECR]]
+### Amazon-ECR
 
 **Elastic Container Registry**
 
@@ -320,11 +320,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 
 **Access:** Controlled through IAM (permission errors → check policy)
 
-**Related:** [[Docker]], [[ECS]], [[EKS]]
+**Related:** [[09-mlops/09-mlops#Docker]], [[09-mlops#ECS]], [[09-mlops/09-mlops#EKS]]
 
 ---
 
-### [[AWS-Batch]]
+### AWS-Batch
 
 **Purpose:** Run batch jobs as Docker images
 
@@ -338,11 +338,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 - Schedule with CloudWatch Events
 - Orchestrate with Step Functions
 
-**Related:** [[Step-Functions]], [[Glue]]
+**Related:** [[09-mlops#Step-Functions]], [[03-data-transformation#AWS-Glue]]
 
 ---
 
-### [[AWS-CloudFormation]]
+### AWS-CloudFormation
 
 **Purpose:** Declarative Infrastructure as Code
 
@@ -357,11 +357,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 - "Custom resources" for unsupported
 - Delete/recreate infrastructure on the fly
 
-**Related:** [[CDK]], [[Infrastructure-as-Code]]
+**Related:** [[09-mlops#CDK]], Infrastructure-as-Code
 
 ---
 
-### [[AWS-CDK]]
+### AWS-CDK
 
 **Cloud Development Kit**
 
@@ -379,11 +379,11 @@ This section covers MLOps practices on AWS, including deployment strategies, con
 CDK Application → cdk synth → CloudFormation Template → Deploy
 ```
 
-**Related:** [[CloudFormation]], [[SAM]]
+**Related:** [[09-mlops#CloudFormation]], SAM
 
 ---
 
-### [[AWS-CodePipeline]]
+### AWS-CodePipeline
 
 **Purpose:** Orchestrate CI/CD for automatic deployment
 
@@ -401,11 +401,11 @@ Code → Build → Test → Provision → Deploy
 - **CodeBuild:** Compile, test, produce packages (serverless)
 - **CodeDeploy:** Deploy to EC2/on-premises (needs agent)
 
-**Related:** [[CI-CD]], [[CodeBuild]], [[CodeDeploy]]
+**Related:** [[09-mlops/09-mlops#CI-CD]], [[09-mlops#CodeBuild]], [[09-mlops#CodeDeploy]]
 
 ---
 
-### [[Amazon-EventBridge]]
+### Amazon-EventBridge
 
 **Formerly:** CloudWatch Events
 
@@ -431,11 +431,11 @@ Code → Build → Test → Provision → Deploy
 - Archive events, replay archived events
 - Schema Registry (auto-infer schema, versioning)
 
-**Related:** [[Step-Functions]], [[Lambda]], [[Event-Driven]]
+**Related:** [[09-mlops#Step-Functions]], [[09-mlops#AWS-Lambda]], Event-Driven
 
 ---
 
-### [[AWS-Step-Functions]]
+### AWS-Step-Functions
 
 **Purpose:** Design and execute workflows as state machines
 
@@ -460,11 +460,11 @@ Code → Build → Test → Provision → Deploy
 - Manage Batch jobs
 - Process datasets in parallel (Map state)
 
-**Related:** [[MWAA]], [[Lambda]], [[Orchestration]]
+**Related:** [[09-mlops#MWAA]], [[09-mlops#AWS-Lambda]], [[09-mlops/09-mlops#Orchestration]]
 
 ---
 
-### [[Amazon-MWAA]]
+### Amazon-MWAA
 
 **Managed Workflows for Apache Airflow**
 
@@ -485,11 +485,11 @@ Code → Build → Test → Provision → Deploy
 
 **Integrations:** Athena, Batch, EMR, Glue, Lambda, Redshift, SageMaker, S3
 
-**Related:** [[Step-Functions]], [[ETL]], [[Orchestration]]
+**Related:** [[09-mlops#Step-Functions]], ETL, [[09-mlops/09-mlops#Orchestration]]
 
 ---
 
-### [[AWS-Lake-Formation]]
+### AWS-Lake-Formation
 
 **Purpose:** Set up secure data lakes in days
 
@@ -512,7 +512,7 @@ Code → Build → Test → Provision → Deploy
 - **Governed Tables:** ACID transactions, streaming support
 - **Data Filters:** Row-level, column-level, cell-level security
 
-**Related:** [[Glue]], [[Data-Lake]], [[Data-Governance]]
+**Related:** [[03-data-transformation#AWS-Glue]], Data-Lake, Data-Governance
 
 ---
 

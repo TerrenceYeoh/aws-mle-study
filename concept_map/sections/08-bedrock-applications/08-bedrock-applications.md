@@ -15,7 +15,7 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 
 ## Core Concepts
 
-### [[Amazon-Bedrock]]
+### Amazon-Bedrock
 
 **What It Is:**
 - Serverless API for generative AI foundation models
@@ -38,11 +38,11 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 | Mistral AI | Mistral |
 | Stability AI | Stable Diffusion |
 
-**Related:** [[Foundation-Models]], [[SageMaker-JumpStart]], [[RAG]]
+**Related:** [[07-genai-fundamentals#Foundation-Models]], [[08-bedrock-applications#SageMaker-JumpStart]], [[08-bedrock-applications#RAG]]
 
 ---
 
-### [[Bedrock-API-Endpoints]]
+### Bedrock-API-Endpoints
 
 | Endpoint | Purpose | Key Operations |
 |----------|---------|----------------|
@@ -51,11 +51,11 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 | **bedrock-agent** | Manage agents and knowledge bases | - |
 | **bedrock-agent-runtime** | Inference against agents/KBs | InvokeAgent, Retrieve, RetrieveAndGenerate |
 
-**Related:** [[IAM-Permissions]], [[Agents]], [[Knowledge-Bases]]
+**Related:** IAM-Permissions, [[08-bedrock-applications#Agents]], [[08-bedrock-applications#Knowledge-Bases]]
 
 ---
 
-### [[Fine-Tuning-Bedrock]]
+### Fine-Tuning-Bedrock
 
 **Purpose:** Adapt existing LLM to specific use case
 
@@ -76,11 +76,11 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 
 **Security:** Use VPC and PrivateLink for sensitive training data
 
-**Related:** [[Transfer-Learning]], [[Foundation-Models]]
+**Related:** [[07-genai-fundamentals#Transfer-Learning]], [[07-genai-fundamentals#Foundation-Models]]
 
 ---
 
-### [[Retrieval-Augmented-Generation]]
+### Retrieval-Augmented-Generation
 
 **Definition:** "Open-book exam" for LLMs - query external database instead of relying on model's training
 
@@ -106,11 +106,11 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 - Can still hallucinate
 - Sensitive to retrieval relevancy
 
-**Related:** [[Vector-Database]], [[Knowledge-Bases]], [[Embeddings]]
+**Related:** [[08-bedrock-applications/08-bedrock-applications#Vector-Database]], [[08-bedrock-applications#Knowledge-Bases]], [[07-genai-fundamentals/07-genai-fundamentals#Embeddings]]
 
 ---
 
-### [[Vector-Database]]
+### Vector-Database
 
 **Purpose:** Store data alongside computed embedding vectors for semantic search
 
@@ -126,11 +126,11 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 | **Commercial purpose-built** | Pinecone, Weaviate |
 | **Open source** | Chroma, Marqo, Vespa, Qdrant, LanceDB, Milvus |
 
-**Related:** [[Embeddings]], [[RAG]], [[Knowledge-Bases]]
+**Related:** [[07-genai-fundamentals/07-genai-fundamentals#Embeddings]], [[08-bedrock-applications#RAG]], [[08-bedrock-applications#Knowledge-Bases]]
 
 ---
 
-### [[Knowledge-Bases]]
+### Knowledge-Bases
 
 **Purpose:** Managed RAG in Bedrock - "Chat with your document"
 
@@ -160,11 +160,11 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 - Direct application integration
 - Incorporate into agents ("Agentic RAG")
 
-**Related:** [[RAG]], [[Vector-Database]], [[Agents]]
+**Related:** [[08-bedrock-applications#RAG]], [[08-bedrock-applications/08-bedrock-applications#Vector-Database]], [[08-bedrock-applications#Agents]]
 
 ---
 
-### [[Bedrock-Guardrails]]
+### Bedrock-Guardrails
 
 **Purpose:** Content filtering for prompts and responses
 
@@ -184,11 +184,11 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 - Knowledge bases
 - Custom blocked message response
 
-**Related:** [[Agents]], [[Safety]], [[Content-Moderation]]
+**Related:** [[08-bedrock-applications#Agents]], Safety, Content-Moderation
 
 ---
 
-### [[LLM-Agents]]
+### LLM-Agents
 
 **Definition:** LLMs with tools and discretion on which to use
 
@@ -204,11 +204,11 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 - Tools access external information/services
 - Can ask user for missing information
 
-**Related:** [[Action-Groups]], [[Knowledge-Bases]], [[Lambda]]
+**Related:** Action-Groups, [[08-bedrock-applications#Knowledge-Bases]], [[09-mlops#AWS-Lambda]]
 
 ---
 
-### [[Action-Groups]]
+### Action-Groups
 
 **Purpose:** Define tools for Bedrock agents
 
@@ -225,11 +225,11 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 - Knowledge bases as tools ("Agentic RAG")
 - Optional Code Interpreter (write code, produce charts)
 
-**Related:** [[Agents]], [[Lambda]], [[Knowledge-Bases]]
+**Related:** [[08-bedrock-applications#Agents]], [[09-mlops#AWS-Lambda]], [[08-bedrock-applications#Knowledge-Bases]]
 
 ---
 
-### [[Deploying-Agents]]
+### Deploying-Agents
 
 **Steps:**
 1. Create an "alias" (deployed snapshot)
@@ -244,13 +244,13 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 
 **Invocation:** InvokeAgent request with alias ID
 
-**Related:** [[Agents]], [[API-Endpoints]]
+**Related:** [[08-bedrock-applications#Agents]], API-Endpoints
 
 ---
 
 ## AWS Services
 
-### [[Amazon-Bedrock]]
+### Amazon-Bedrock
 
 **Model Evaluation:**
 | Type | Methods |
@@ -267,7 +267,7 @@ This section covers Amazon Bedrock for building generative AI applications, incl
 - Single Sign On with IAM + Identity Provider
 - Project collaboration
 
-**Related:** [[Foundation-Models]], [[Model-Evaluation]]
+**Related:** [[07-genai-fundamentals#Foundation-Models]], Model-Evaluation
 
 ---
 

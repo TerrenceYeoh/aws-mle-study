@@ -18,10 +18,10 @@
 
 | Service | Type | Use Case | Latency | Cost |
 |---------|------|----------|---------|------|
-| [[S3]] | Object | Data lakes, model artifacts, any file | High | Low |
-| [[EBS]] | Block | EC2 instance storage, databases | Low | Medium |
-| [[EFS]] | File (NFS) | Shared storage across instances | Medium | Medium |
-| [[FSx]] | File (various) | High-performance workloads (Lustre, Windows) | Very Low | High |
+| [[02-data-ingestion#Amazon-S3]] | Object | Data lakes, model artifacts, any file | High | Low |
+| [[02-data-ingestion#Amazon-EBS]] | Block | EC2 instance storage, databases | Low | Medium |
+| [[02-data-ingestion#Amazon-EFS]] | File (NFS) | Shared storage across instances | Medium | Medium |
+| [[02-data-ingestion#Amazon-FSx]] | File (various) | High-performance workloads (Lustre, Windows) | Very Low | High |
 
 **Decision Flow**:
 ```
@@ -36,7 +36,7 @@ Need shared access across instances?
 
 ### Data Processing: EMR vs Glue vs SageMaker Processing
 
-| Criteria | [[EMR]] | [[Glue]] | [[SageMaker]] Processing |
+| Criteria | [[03-data-transformation#Amazon-EMR]] | [[03-data-transformation#AWS-Glue]] | [[05-sagemaker-algorithms#SageMaker]] Processing |
 |----------|---------|----------|-------------------------|
 | Management | Self-managed clusters | Serverless | Serverless |
 | Best For | Complex big data, Spark/Hadoop | ETL jobs, data catalog | ML-specific preprocessing |
@@ -53,7 +53,7 @@ Need shared access across instances?
 
 ### ML Platform: SageMaker vs Bedrock
 
-| Criteria | [[SageMaker]] | [[Bedrock]] |
+| Criteria | [[05-sagemaker-algorithms#SageMaker]] | [[08-bedrock-applications#Amazon-Bedrock]] |
 |----------|---------------|-------------|
 | Purpose | Full ML platform | Foundation model access |
 | Model Type | Train custom models | Use pre-trained FMs |
@@ -76,18 +76,18 @@ Need to train custom models?
 
 | Use Case | Service | Input | Output |
 |----------|---------|-------|--------|
-| Text analysis | [[Comprehend]] | Text | Sentiment, entities, topics |
-| Document extraction | [[Textract]] | Images/PDFs | Structured data |
-| Translation | [[Translate]] | Text | Translated text |
-| Speech-to-text | [[Transcribe]] | Audio | Text |
-| Text-to-speech | [[Polly]] | Text | Audio |
-| Chatbots | [[Lex]] | Text/Voice | Responses |
-| Image/Video analysis | [[Rekognition]] | Images/Video | Labels, faces, objects |
-| Recommendations | [[Personalize]] | User behavior | Recommendations |
-| Time series forecast | [[Forecast]] | Historical data | Predictions |
-| Enterprise search | [[Kendra]] | Documents | Search results |
-| Fraud detection | [[Fraud-Detector]] | Transaction data | Risk scores |
-| Equipment anomaly | [[Lookout-for-Equipment]] | Sensor data | Anomalies |
+| Text analysis | [[04-managed-ai-services#Amazon-Comprehend]] | Text | Sentiment, entities, topics |
+| Document extraction | [[04-managed-ai-services#Amazon-Textract]] | Images/PDFs | Structured data |
+| Translation | [[04-managed-ai-services#Amazon-Translate]] | Text | Translated text |
+| Speech-to-text | [[04-managed-ai-services#Amazon-Transcribe]] | Audio | Text |
+| Text-to-speech | [[04-managed-ai-services#Amazon-Polly]] | Text | Audio |
+| Chatbots | [[04-managed-ai-services#Amazon-Lex]] | Text/Voice | Responses |
+| Image/Video analysis | [[04-managed-ai-services#Amazon-Rekognition]] | Images/Video | Labels, faces, objects |
+| Recommendations | [[04-managed-ai-services#Amazon-Personalize]] | User behavior | Recommendations |
+| Time series forecast | [[04-managed-ai-services#Amazon-Forecast]] | Historical data | Predictions |
+| Enterprise search | [[04-managed-ai-services#Amazon-Kendra]] | Documents | Search results |
+| Fraud detection | [[04-managed-ai-services#Amazon-Fraud-Detector]] | Transaction data | Risk scores |
+| Equipment anomaly | [[04-managed-ai-services#Amazon-Lookout]] | Sensor data | Anomalies |
 
 ---
 
@@ -95,9 +95,9 @@ Need to train custom models?
 
 | Service | Purpose | Stage |
 |---------|---------|-------|
-| [[CodeBuild]] | Build/compile code, run tests | Build |
-| [[CodeDeploy]] | Deploy to EC2, Lambda, ECS | Deploy |
-| [[CodePipeline]] | Orchestrate full CI/CD workflow | Orchestration |
+| [[09-mlops#CodeBuild]] | Build/compile code, run tests | Build |
+| [[09-mlops#CodeDeploy]] | Deploy to EC2, Lambda, ECS | Deploy |
+| [[09-mlops#CodePipeline]] | Orchestrate full CI/CD workflow | Orchestration |
 
 **Pipeline Flow**:
 ```
@@ -110,7 +110,7 @@ Source (CodeCommit/GitHub) → CodeBuild → CodeDeploy
 
 ### Infrastructure as Code: CloudFormation vs CDK
 
-| Criteria | [[CloudFormation]] | [[CDK]] |
+| Criteria | [[09-mlops#CloudFormation]] | [[09-mlops#CDK]] |
 |----------|-------------------|---------|
 | Language | YAML/JSON | Python, TypeScript, Java, etc. |
 | Abstraction | Low-level | High-level constructs |
@@ -126,7 +126,7 @@ Source (CodeCommit/GitHub) → CodeBuild → CodeDeploy
 
 ### Orchestration: EventBridge vs MWAA (Airflow)
 
-| Criteria | [[EventBridge]] | [[MWAA]] |
+| Criteria | [[09-mlops#EventBridge]] | [[09-mlops#MWAA]] |
 |----------|-----------------|----------|
 | Type | Event-driven | Workflow orchestration |
 | Trigger | Events (real-time) | Scheduled/dependency-based |
@@ -140,14 +140,14 @@ Source (CodeCommit/GitHub) → CodeBuild → CodeDeploy
 
 | Service | Purpose | Protects |
 |---------|---------|----------|
-| [[IAM]] | Access management | Who can do what |
-| [[KMS]] | Encryption key management | Data at rest |
-| [[Secrets-Manager]] | Store secrets | Credentials, API keys |
-| [[VPC]] | Network isolation | Network traffic |
-| [[PrivateLink]] | Private connectivity | Service endpoints |
-| [[WAF]] | Web application firewall | Web apps from attacks |
-| [[Shield]] | DDoS protection | Infrastructure |
-| [[Macie]] | Data discovery | Sensitive data in S3 |
+| [[10-security-compliance#IAM]] | Access management | Who can do what |
+| [[10-security-compliance#KMS]] | Encryption key management | Data at rest |
+| [[10-security-compliance#Secrets-Manager]] | Store secrets | Credentials, API keys |
+| [[10-security-compliance#VPC]] | Network isolation | Network traffic |
+| [[10-security-compliance#PrivateLink]] | Private connectivity | Service endpoints |
+| [[10-security-compliance#AWS-WAF]] | Web application firewall | Web apps from attacks |
+| [[10-security-compliance#AWS-Shield]] | DDoS protection | Infrastructure |
+| [[10-security-compliance#Amazon-Macie]] | Data discovery | Sensitive data in S3 |
 
 ---
 
@@ -155,13 +155,13 @@ Source (CodeCommit/GitHub) → CodeBuild → CodeDeploy
 
 | Service | Purpose | Data Type |
 |---------|---------|-----------|
-| [[CloudWatch]] | Metrics, logs, alarms | Operational data |
-| [[CloudTrail]] | API call auditing | Who did what |
-| [[Config]] | Resource compliance | Configuration state |
-| [[X-Ray]] | Distributed tracing | Request flow |
-| [[Trusted-Advisor]] | Best practice checks | Recommendations |
-| [[Budgets]] | Cost alerts | Spending thresholds |
-| [[Cost-Explorer]] | Cost analysis | Historical costs |
+| [[11-management-governance#CloudWatch]] | Metrics, logs, alarms | Operational data |
+| [[11-management-governance#CloudTrail]] | API call auditing | Who did what |
+| [[11-management-governance#AWS-Config]] | Resource compliance | Configuration state |
+| [[11-management-governance#AWS-X-Ray]] | Distributed tracing | Request flow |
+| [[11-management-governance#Trusted-Advisor]] | Best practice checks | Recommendations |
+| [[11-management-governance#AWS-Budgets]] | Cost alerts | Spending thresholds |
+| [[11-management-governance#Cost-Explorer]] | Cost analysis | Historical costs |
 
 ---
 
@@ -169,7 +169,7 @@ Source (CodeCommit/GitHub) → CodeBuild → CodeDeploy
 
 | Phase | Activities | Key Services |
 |-------|------------|--------------|
-| **Process Data** | Collect, store, catalog | [[S3]], [[Kinesis]], [[Glue]] |
-| **Develop Model** | Transform, train, tune, evaluate | [[EMR]], [[SageMaker]], [[Glue]] |
-| **Deploy** | Package, serve, scale | [[SageMaker]], [[ECS]], [[ECR]] |
-| **Monitor** | Track performance, detect drift | [[CloudWatch]], [[SageMaker]] |
+| **Process Data** | Collect, store, catalog | [[02-data-ingestion#Amazon-S3]], [[02-data-ingestion#Amazon-Kinesis-Data-Streams]], [[03-data-transformation#AWS-Glue]] |
+| **Develop Model** | Transform, train, tune, evaluate | [[03-data-transformation#Amazon-EMR]], [[05-sagemaker-algorithms#SageMaker]], [[03-data-transformation#AWS-Glue]] |
+| **Deploy** | Package, serve, scale | [[05-sagemaker-algorithms#SageMaker]], [[09-mlops#ECS]], [[09-mlops#ECR]] |
+| **Monitor** | Track performance, detect drift | [[11-management-governance#CloudWatch]], [[05-sagemaker-algorithms#SageMaker]] |

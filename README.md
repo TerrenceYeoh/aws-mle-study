@@ -32,9 +32,13 @@ AWS MLE Study/
         └── quick-reference.md
 ```
 
-Each section contains:
-- `concept-map.md` - Concepts, relationships, and exam tips
-- `comparison-tables.md` - Service comparisons and decision tables
+Each section folder contains two files named after the section:
+- `{section-name}.md` - Concepts, relationships, and exam tips
+- `{section-name}-comparison-tables.md` - Service comparisons and decision tables
+
+Example for section 02:
+- `sections/02-data-ingestion/02-data-ingestion.md`
+- `sections/02-data-ingestion/02-data-ingestion-comparison-tables.md`
 
 ---
 
@@ -161,8 +165,8 @@ To install: Settings → Community plugins → Browse
 
 ### Deep Dive (1-2 hours)
 1. Pick a section folder (e.g., `sections/05-sagemaker-algorithms/`)
-2. Read `concept-map.md` for understanding
-3. Use `comparison-tables.md` for memorization
+2. Read `05-sagemaker-algorithms.md` for understanding
+3. Use `05-sagemaker-algorithms-comparison-tables.md` for memorization
 4. Open local graph to see connections
 
 ### Pre-Exam Review

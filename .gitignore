@@ -15,5 +15,8 @@ data/
 # Claude files
 .claude/
 
+# Obsidian files
+.obsidian/
+
 # Archived files
 archive/

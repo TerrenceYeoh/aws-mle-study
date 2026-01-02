@@ -15,7 +15,7 @@ This section covers AWS security fundamentals for ML workloads, including identi
 
 ## Core Concepts
 
-### [[Principle-of-Least-Privilege]]
+### Principle-of-Least-Privilege
 - **Definition:** Grant only the permissions required to perform a task
 - **Best Practices:**
   - Start broad while developing, lock down once requirements clear
@@ -24,9 +24,9 @@ This section covers AWS security fundamentals for ML workloads, including identi
   - Specific bucket ARNs (not wildcards)
   - Condition keys (e.g., `s3:prefix` for path restrictions)
   - Specific actions (e.g., `s3:GetObject`, `s3:GetObjectVersion`)
-- Related: [[IAM]], [[IAM-Policies]]
+- Related: [[10-security-compliance#IAM]], [[10-security-compliance/10-security-compliance#IAM-Policies]]
 
-### [[Data-Masking-and-Anonymization]]
+### Data-Masking-and-Anonymization
 - **Data Masking:** Obfuscates sensitive data (PII)
   - Example: Show only last 4 digits of SSN/credit card
   - Supported in: **Glue DataBrew**, **Redshift**
@@ -36,31 +36,31 @@ This section covers AWS security fundamentals for ML workloads, including identi
   - Encrypt (deterministic or probabilistic)
   - Hash (one-way transformation)
   - Delete/don't import
-- Related: [[Glue-DataBrew]], [[Macie]]
+- Related: Glue-DataBrew, [[10-security-compliance#Amazon-Macie]]
 
-### [[Encryption-at-Rest]]
+### Encryption-at-Rest
 - Data encrypted when stored on disk
 - **AWS KMS** manages encryption keys
 - Server decrypts before sending data back
-- Related: [[KMS]], [[S3-Encryption]]
+- Related: [[10-security-compliance#KMS]], S3-Encryption
 
-### [[Encryption-in-Transit]]
+### Encryption-in-Transit
 - Data encrypted before sending, decrypted after receiving
 - **TLS certificates** enable HTTPS
 - Prevents **Man-in-the-Middle (MITM)** attacks
-- Related: [[TLS-SSL]]
+- Related: TLS-SSL
 
-### [[Client-Side-Encryption]]
+### Client-Side-Encryption
 - Data encrypted by client before sending
 - Server never decrypts the data
 - May use **Envelope Encryption**
-- Related: [[KMS]]
+- Related: [[10-security-compliance#KMS]]
 
 ---
 
 ## AWS Services
 
-### [[IAM]] (Identity and Access Management)
+### IAM (Identity and Access Management)
 - **Purpose:** Global service for managing users, groups, and permissions
 - **Key Components:**
   - **Root Account:** Created by default - never use or share
@@ -77,9 +77,9 @@ This section covers AWS security fundamentals for ML workloads, including identi
   - AmazonSageMakerFullAccess
   - DataScientist
   - AdministratorAccess
-- Related: [[IAM-Policies]], [[IAM-Roles]]
+- Related: [[10-security-compliance/10-security-compliance#IAM-Policies]], IAM-Roles
 
-### [[IAM-Policies]]
+### IAM-Policies
 - **Structure:**
   | Element | Required | Description |
   |---------|----------|-------------|
@@ -91,9 +91,9 @@ This section covers AWS security fundamentals for ML workloads, including identi
   | Principal | Depends | Account/user/role this applies to |
   | Condition | No | When policy is in effect |
 - **Inheritance:** Users inherit from groups; can also have inline policies
-- Related: [[IAM]], [[Principle-of-Least-Privilege]]
+- Related: [[10-security-compliance#IAM]], Principle-of-Least-Privilege
 
-### [[MFA]] (Multi-Factor Authentication)
+### MFA (Multi-Factor Authentication)
 - **Definition:** Password you know + security device you own
 - **Purpose:** Protect Root and IAM users from credential theft
 - **Device Options:**
@@ -101,9 +101,9 @@ This section covers AWS security fundamentals for ML workloads, including identi
   - U2F Security Key (YubiKey)
   - Hardware Key Fob (Gemalto)
   - GovCloud Key Fob (SurePassID)
-- Related: [[IAM]], [[Password-Policy]]
+- Related: [[10-security-compliance#IAM]], Password-Policy
 
-### [[KMS]] (Key Management Service)
+### KMS (Key Management Service)
 - **Purpose:** Centralized encryption key management
 - **Integration:** EBS, S3, RDS, SSM, SageMaker
 - **Key Types:**
@@ -118,9 +118,9 @@ This section covers AWS security fundamentals for ML workloads, including identi
   | Customer Managed (imported) | $1/month | Manual only |
 - **Key Policies:** Control access to keys (like S3 bucket policies)
 - **Cross-Region:** Keys are regional; must re-encrypt when copying snapshots
-- Related: [[Encryption-at-Rest]], [[S3]]
+- Related: Encryption-at-Rest, [[02-data-ingestion#Amazon-S3]]
 
-### [[Secrets-Manager]]
+### Secrets-Manager
 - **Purpose:** Store and manage secrets (especially RDS credentials)
 - **Features:**
   - Force rotation every X days
@@ -132,9 +132,9 @@ This section covers AWS security fundamentals for ML workloads, including identi
   - Keep read replicas in sync
   - Promote replica to standalone
 - **Use Cases:** Multi-region apps, disaster recovery
-- Related: [[KMS]], [[RDS]]
+- Related: [[10-security-compliance#KMS]], RDS
 
-### [[Macie]]
+### Macie
 - **Purpose:** Data security and privacy service for S3
 - **Capabilities:**
   - Uses ML and pattern matching
@@ -142,9 +142,9 @@ This section covers AWS security fundamentals for ML workloads, including identi
   - Identifies **PII** (Personally Identifiable Information)
 - **Integration:** Alerts via Amazon EventBridge
 - **Flow:** S3 Buckets → Macie (analyze) → EventBridge (notify)
-- Related: [[S3]], [[EventBridge]]
+- Related: [[02-data-ingestion#Amazon-S3]], [[09-mlops#EventBridge]]
 
-### [[WAF]] (Web Application Firewall)
+### WAF (Web Application Firewall)
 - **Purpose:** Protect web applications from Layer 7 (HTTP) exploits
 - **Deployment Targets:**
   - Application Load Balancer
@@ -163,9 +163,9 @@ This section covers AWS security fundamentals for ML workloads, including identi
   - Web ACLs are Regional (except CloudFront)
   - Does NOT support Network Load Balancer
   - Use Global Accelerator for fixed IP + WAF on ALB
-- Related: [[Shield]], [[ALB]], [[CloudFront]]
+- Related: [[10-security-compliance#AWS-Shield]], ALB, CloudFront
 
-### [[Shield]]
+### Shield
 - **Purpose:** DDoS (Distributed Denial of Service) protection
 - **Shield Standard (Free):**
   - Activated for all AWS customers
@@ -177,9 +177,9 @@ This section covers AWS security fundamentals for ML workloads, including identi
   - 24/7 DDoS Response Team (DRP)
   - Cost protection against DDoS usage spikes
   - Auto-deploys WAF rules for Layer 7 attacks
-- Related: [[WAF]], [[CloudFront]]
+- Related: [[10-security-compliance#AWS-WAF]], CloudFront
 
-### [[VPC]] (Virtual Private Cloud)
+### VPC (Virtual Private Cloud)
 - **Purpose:** Private network for deploying resources
 - **Scope:** Regional resource
 - **Subnets:**
@@ -188,49 +188,49 @@ This section covers AWS security fundamentals for ML workloads, including identi
   - **Public Subnet:** Accessible from internet
   - **Private Subnet:** Not accessible from internet
 - **Route Tables:** Define access to internet and between subnets
-- Related: [[Subnets]], [[Security-Groups]], [[NACL]]
+- Related: Subnets, [[10-security-compliance/10-security-compliance#Security-Groups]], [[10-security-compliance/10-security-compliance#NACL]]
 
-### [[Internet-Gateway]]
+### Internet-Gateway
 - Connects VPC instances to internet
 - Public subnets have route to IGW
-- Related: [[VPC]], [[NAT-Gateway]]
+- Related: [[10-security-compliance#VPC]], NAT-Gateway
 
-### [[NAT-Gateway]]
+### NAT-Gateway
 - **Purpose:** Allow private subnet instances to access internet
 - Instances remain private (no inbound from internet)
 - AWS-managed (vs self-managed NAT Instance)
-- Related: [[VPC]], [[Internet-Gateway]]
+- Related: [[10-security-compliance#VPC]], Internet-Gateway
 
-### [[Security-Groups]]
+### Security-Groups
 - **Level:** Instance level (ENI)
 - **Rules:** Allow only (no deny rules)
 - **Stateful:** Return traffic auto-allowed
 - **Evaluation:** All rules evaluated
-- Related: [[NACL]], [[VPC]]
+- Related: [[10-security-compliance/10-security-compliance#NACL]], [[10-security-compliance#VPC]]
 
-### [[NACL]] (Network ACL)
+### NACL (Network ACL)
 - **Level:** Subnet level
 - **Rules:** Allow AND Deny
 - **Stateless:** Must explicitly allow return traffic
 - **Evaluation:** Rules in number order
 - **Association:** Auto-applies to all instances in subnet
-- Related: [[Security-Groups]], [[VPC]]
+- Related: [[10-security-compliance/10-security-compliance#Security-Groups]], [[10-security-compliance#VPC]]
 
-### [[VPC-Flow-Logs]]
+### VPC-Flow-Logs
 - **Purpose:** Capture IP traffic information
 - **Levels:** VPC, Subnet, or ENI
 - **Captures:** ELB, RDS, Aurora, ElastiCache, etc.
 - **Destinations:** S3, CloudWatch Logs, Kinesis Data Firehose
-- Related: [[VPC]], [[CloudWatch]]
+- Related: [[10-security-compliance#VPC]], [[11-management-governance#CloudWatch]]
 
-### [[VPC-Peering]]
+### VPC-Peering
 - **Purpose:** Connect two VPCs privately using AWS network
 - **Requirements:**
   - No overlapping CIDR (IP ranges)
   - **Not transitive** - must establish for each VPC pair
-- Related: [[VPC]], [[PrivateLink]]
+- Related: [[10-security-compliance#VPC]], [[10-security-compliance#PrivateLink]]
 
-### [[VPC-Endpoints]]
+### VPC-Endpoints
 - **Purpose:** Connect to AWS services via private network
 - **Benefits:** Enhanced security, lower latency
 - **Types:**
@@ -238,29 +238,29 @@ This section covers AWS security fundamentals for ML workloads, including identi
   |------|----------|------|
   | Gateway Endpoint | S3, DynamoDB | Free |
   | Interface Endpoint (ENI) | Most services | Uses PrivateLink |
-- Related: [[VPC]], [[PrivateLink]]
+- Related: [[10-security-compliance#VPC]], [[10-security-compliance#PrivateLink]]
 
-### [[PrivateLink]]
+### PrivateLink
 - **Purpose:** Most secure & scalable way to expose service to 1000s of VPCs
 - **Does NOT require:** VPC peering, Internet gateway, NAT, Route tables
 - **Architecture:**
   - Service VPC: Network Load Balancer
   - Customer VPC: Elastic Network Interface (ENI)
 - **Flow:** Application → NLB → PrivateLink → ENI → Consumer
-- Related: [[VPC-Endpoints]], [[NLB]]
+- Related: VPC-Endpoints, NLB
 
-### [[Site-to-Site-VPN]]
+### Site-to-Site-VPN
 - **Connection:** Over public internet (encrypted)
 - **Setup Time:** Quick
 - **Cost:** Lower than Direct Connect
-- Related: [[Direct-Connect]], [[VPC]]
+- Related: Direct-Connect, [[10-security-compliance#VPC]]
 
-### [[Direct-Connect]]
+### Direct-Connect
 - **Connection:** Physical private connection
 - **Speed:** Fast, consistent
 - **Setup Time:** At least 1 month
 - **Cost:** Higher than VPN
-- Related: [[Site-to-Site-VPN]], [[VPC]]
+- Related: Site-to-Site-VPN, [[10-security-compliance#VPC]]
 
 ---
 

@@ -23,7 +23,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ## Natural Language Processing
 
-### [[Amazon Comprehend]]
+### Amazon Comprehend
 
 **Purpose:** Fully managed, serverless NLP service
 
@@ -59,7 +59,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ---
 
-### [[Amazon Translate]]
+### Amazon Translate
 
 **Purpose:** Natural language translation
 
@@ -73,7 +73,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ## Speech Services
 
-### [[Amazon Transcribe]]
+### Amazon Transcribe
 
 **Purpose:** Convert speech to text (ASR - Automatic Speech Recognition)
 
@@ -103,7 +103,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ---
 
-### [[Amazon Polly]]
+### Amazon Polly
 
 **Purpose:** Text-to-Speech (TTS) using deep learning
 
@@ -127,7 +127,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ## Vision Services
 
-### [[Amazon Rekognition]]
+### Amazon Rekognition
 
 **Purpose:** Image and video analysis using ML
 
@@ -158,7 +158,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ## Conversational AI
 
-### [[Amazon Lex]]
+### Amazon Lex
 
 **Purpose:** Build conversational chatbots using voice and text
 
@@ -185,7 +185,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ## Recommendations
 
-### [[Amazon Personalize]]
+### Amazon Personalize
 
 **Purpose:** Real-time personalized recommendations (same technology as Amazon.com)
 
@@ -215,7 +215,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ## Document Processing
 
-### [[Amazon Textract]]
+### Amazon Textract
 
 **Purpose:** Extract text, handwriting, and structured data from documents
 
@@ -234,7 +234,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ---
 
-### [[Amazon Kendra]]
+### Amazon Kendra
 
 **Purpose:** Fully managed enterprise document search powered by ML
 
@@ -256,7 +256,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ## Human Review
 
-### [[Amazon Augmented AI (A2I)]]
+### Amazon Augmented AI (A2I)
 
 **Purpose:** Human oversight of ML predictions in production
 
@@ -279,7 +279,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ## Anomaly Detection
 
-### [[Amazon Lookout]]
+### Amazon Lookout
 
 **Purpose:** ML-powered anomaly detection
 
@@ -301,7 +301,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ---
 
-### [[Amazon Fraud Detector]]
+### Amazon Fraud Detector
 
 **Purpose:** Detect fraud using ML
 
@@ -348,7 +348,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ## Generative AI Services
 
-### [[Amazon Q Business]]
+### Amazon Q Business
 
 **Purpose:** Fully managed Gen-AI assistant for employees
 
@@ -378,7 +378,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 - Respond only with internal information
 - Global controls & topic-level controls
 
-### [[Amazon Q Apps]]
+### Amazon Q Apps
 
 **Purpose:** Create Gen-AI powered apps without coding
 
@@ -391,7 +391,7 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 
 ---
 
-### [[Amazon Q Developer]]
+### Amazon Q Developer
 
 **Purpose:** AI assistant for developers and AWS users
 
@@ -514,8 +514,8 @@ This section covers AWS pre-trained AI/ML services for common use cases includin
 ---
 
 ## Related Sections
-- [[02-data-ingestion]] - Data sources for AI services
-- [[03-data-transformation]] - Data preparation before AI services
-- [[05-sagemaker-algorithms]] - Custom model training
-- [[06-model-training]] - Training techniques
-- [[07-deployment]] - Deploying models at scale
+- [[02-data-ingestion/02-data-ingestion]] - Data sources for AI services
+- [[03-data-transformation/03-data-transformation]] - Data preparation before AI services
+- [[05-sagemaker-algorithms/05-sagemaker-algorithms]] - Custom model training
+- [[06-model-training/06-model-training]] - Training techniques
+- 07-deployment - Deploying models at scale

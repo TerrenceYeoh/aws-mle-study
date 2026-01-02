@@ -15,7 +15,7 @@ This section covers the transformer architecture, self-attention mechanism, Larg
 
 ## Core Concepts
 
-### [[Transformer-Architecture]]
+### Transformer-Architecture
 
 **The Key Innovation:** "Attention is All You Need" (2017)
 
@@ -30,11 +30,11 @@ This section covers the transformer architecture, self-attention mechanism, Larg
 - Better handling of long-range dependencies
 - Scales to hundreds of billions of parameters
 
-**Related:** [[Self-Attention]], [[RNN]], [[LSTM]], [[GPT]]
+**Related:** [[07-genai-fundamentals#Self-Attention]], [[07-genai-fundamentals/07-genai-fundamentals#RNN]], [[07-genai-fundamentals/07-genai-fundamentals#LSTM]], [[07-genai-fundamentals/07-genai-fundamentals#GPT]]
 
 ---
 
-### [[Self-Attention]]
+### Self-Attention
 
 **Purpose:** Create contextual embeddings that capture word meaning in context
 
@@ -60,11 +60,11 @@ This section covers the transformer architecture, self-attention mechanism, Larg
 
 **Formula:** Attention(Q,K,V) = softmax(QK^T / √d_k) × V
 
-**Related:** [[Multi-Head-Attention]], [[Masked-Attention]], [[Positional-Encoding]]
+**Related:** Multi-Head-Attention, Masked-Attention, Positional-Encoding
 
 ---
 
-### [[Masked-Self-Attention]]
+### Masked-Self-Attention
 
 **Purpose:** Prevent tokens from seeing future tokens during training
 
@@ -75,11 +75,11 @@ This section covers the transformer architecture, self-attention mechanism, Larg
 
 **Effect:** Ensures autoregressive generation (each token depends only on previous)
 
-**Related:** [[GPT]], [[BERT]], [[Self-Attention]]
+**Related:** [[07-genai-fundamentals/07-genai-fundamentals#GPT]], [[07-genai-fundamentals/07-genai-fundamentals#BERT]], [[07-genai-fundamentals#Self-Attention]]
 
 ---
 
-### [[Multi-Head-Attention]]
+### Multi-Head-Attention
 
 **Concept:** Run multiple self-attention operations in parallel
 
@@ -93,11 +93,11 @@ This section covers the transformer architecture, self-attention mechanism, Larg
 - Increased parallelization
 - Richer representations
 
-**Related:** [[Self-Attention]], [[Transformer-Architecture]]
+**Related:** [[07-genai-fundamentals#Self-Attention]], Transformer-Architecture
 
 ---
 
-### [[GPT-Architecture]]
+### GPT-Architecture
 
 **Generative Pre-Trained Transformer**
 
@@ -128,11 +128,11 @@ Token Probabilities (Logits)
 - Prompt = initial tokens; model continues generating
 - Enables training on unlabeled text
 
-**Related:** [[Decoder-Only]], [[Foundation-Models]], [[LLM]]
+**Related:** Decoder-Only, [[07-genai-fundamentals#Foundation-Models]], LLM
 
 ---
 
-### [[LLM-Processing]]
+### LLM-Processing
 
 **Input Processing:**
 | Step | Purpose |
@@ -147,11 +147,11 @@ Token Probabilities (Logits)
 3. Apply sampling (temperature) → select next token
 4. Repeat until done
 
-**Related:** [[Tokenization]], [[Embeddings]], [[Temperature]]
+**Related:** Tokenization, [[07-genai-fundamentals/07-genai-fundamentals#Embeddings]], [[07-genai-fundamentals/07-genai-fundamentals#Temperature]]
 
 ---
 
-### [[LLM-Parameters]]
+### LLM-Parameters
 
 **Sampling Parameters:**
 
@@ -168,11 +168,11 @@ Token Probabilities (Logits)
 | **Context Window** | Max tokens LLM can process at once |
 | **Max Tokens** | Limit for input or output tokens |
 
-**Related:** [[Temperature]], [[Sampling]], [[Token-Limits]]
+**Related:** [[07-genai-fundamentals/07-genai-fundamentals#Temperature]], Sampling, Token-Limits
 
 ---
 
-### [[Transfer-Learning-LLM]]
+### Transfer-Learning-LLM
 
 **Fine-Tuning Approaches:**
 
@@ -184,13 +184,13 @@ Token Probabilities (Logits)
 | Prompt-completion | Examples of desired behavior | Personality/style |
 | Classification head | Add classification layer | Sentiment, categories |
 
-**Related:** [[Fine-Tuning]], [[Foundation-Models]], [[BERT]]
+**Related:** [[07-genai-fundamentals/07-genai-fundamentals#Fine-Tuning]], [[07-genai-fundamentals#Foundation-Models]], [[07-genai-fundamentals/07-genai-fundamentals#BERT]]
 
 ---
 
 ## AWS Services
 
-### [[Amazon-Bedrock]]
+### Amazon-Bedrock
 
 **Purpose:** Managed service to access foundation models via API
 
@@ -209,11 +209,11 @@ Token Probabilities (Logits)
 - Question answering
 - Embeddings (personalization, semantic search)
 
-**Related:** [[Foundation-Models]], [[SageMaker-JumpStart]]
+**Related:** [[07-genai-fundamentals#Foundation-Models]], [[08-bedrock-applications#SageMaker-JumpStart]]
 
 ---
 
-### [[SageMaker-JumpStart]]
+### SageMaker-JumpStart
 
 **Purpose:** Quick-start notebooks with foundation models in SageMaker Studio
 
@@ -230,11 +230,11 @@ Token Probabilities (Logits)
 3. Select foundation model
 4. Get pre-configured notebook
 
-**Related:** [[SageMaker-Studio]], [[Foundation-Models]], [[Bedrock]]
+**Related:** SageMaker-Studio, [[07-genai-fundamentals#Foundation-Models]], [[08-bedrock-applications#Amazon-Bedrock]]
 
 ---
 
-### [[Foundation-Models]]
+### Foundation-Models
 
 **Definition:** Large pre-trained models adapted for specific tasks
 
@@ -249,7 +249,7 @@ Token Probabilities (Logits)
 | LLaMA | Meta | Decoder-only | Open-weight LLM |
 | DALL-E | OpenAI | Diffusion | Image generation |
 
-**Related:** [[Bedrock]], [[Transfer-Learning]], [[Fine-Tuning]]
+**Related:** [[08-bedrock-applications#Amazon-Bedrock]], [[07-genai-fundamentals#Transfer-Learning]], [[07-genai-fundamentals/07-genai-fundamentals#Fine-Tuning]]
 
 ---
 

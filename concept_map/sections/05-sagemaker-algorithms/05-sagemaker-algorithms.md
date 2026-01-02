@@ -42,7 +42,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 
 ### Regression/Classification Algorithms
 
-#### [[Linear Learner]]
+#### Linear Learner
 - **Type:** Supervised
 - **Use Cases:** Linear regression, binary/multi-class classification
 - **Input:** RecordIO-protobuf (Float32) or CSV
@@ -53,7 +53,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 - **Instance:** CPU or GPU (multi-GPU doesn't help)
 - **Key Hyperparameters:** `learning_rate`, `mini_batch_size`, `L1`, `wd`, `target_precision`, `target_recall`
 
-#### [[XGBoost]]
+#### XGBoost
 - **Type:** Supervised (boosted decision trees)
 - **Use Cases:** Classification, regression
 - **Input:** CSV, libsvm, RecordIO-protobuf, Parquet
@@ -65,7 +65,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 - **Key Hyperparameters:** `max_depth`, `eta`, `subsample`, `gamma`, `alpha`, `lambda`, `scale_pos_weight`
 - **GPU Setup:** Set `tree_method=gpu_hist`
 
-#### [[LightGBM]]
+#### LightGBM
 - **Type:** Supervised (gradient boosting)
 - **Use Cases:** Classification, regression, ranking
 - **Input:** txt/csv
@@ -76,7 +76,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 - **Instance:** CPU only (M5 recommended, not C5)
 - **Key Hyperparameters:** `learning_rate`, `num_leaves`, `feature_fraction`, `max_depth`
 
-#### [[KNN]] (K-Nearest-Neighbors)
+#### KNN (K-Nearest-Neighbors)
 - **Type:** Supervised/Unsupervised
 - **Use Cases:** Simple classification or regression
 - **Input:** RecordIO-protobuf or CSV (first column = label)
@@ -91,7 +91,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 
 ### Clustering Algorithms
 
-#### [[K-Means]]
+#### K-Means
 - **Type:** Unsupervised
 - **Use Cases:** Divide data into K groups by similarity
 - **Input:** RecordIO-protobuf or CSV
@@ -106,7 +106,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 
 ### Dimensionality Reduction
 
-#### [[PCA]] (Principal Component Analysis)
+#### PCA (Principal Component Analysis)
 - **Type:** Unsupervised
 - **Use Cases:** Reduce features while preserving variance
 - **Input:** RecordIO-protobuf or CSV
@@ -121,7 +121,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 
 ### Time Series
 
-#### [[DeepAR]]
+#### DeepAR
 - **Type:** Supervised (RNN-based)
 - **Use Cases:** Forecasting 1D time series
 - **Input:** JSON lines (Gzip/Parquet)
@@ -138,7 +138,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 
 ### NLP Algorithms
 
-#### [[Seq2Seq]] (Sequence to Sequence)
+#### Seq2Seq (Sequence to Sequence)
 - **Type:** Supervised (RNN/CNN with attention)
 - **Use Cases:** Translation, summarization, speech-to-text
 - **Input:** RecordIO-protobuf (**integers**, not floats)
@@ -149,7 +149,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 - **Metrics:** Accuracy, BLEU score, Perplexity
 - **Key Hyperparameters:** `batch_size`, `optimizer_type`, `num_layers_encoder/decoder`
 
-#### [[BlazingText]]
+#### BlazingText
 - **Type:** Supervised (text classification) or Unsupervised (Word2Vec)
 - **Use Cases:**
   - Text classification (predict labels)
@@ -164,14 +164,14 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 - **Word2Vec Modes:** cbow, skipgram, batch_skipgram
 - **Key Hyperparameters:** `mode`, `learning_rate`, `vector_dim`, `word_ngrams`
 
-#### [[Neural Topic Model]] (NTM)
+#### Neural Topic Model (NTM)
 - **Type:** Unsupervised (neural variational inference)
 - **Use Cases:** Organize documents into topics
 - **Input:** RecordIO-protobuf or CSV (words tokenized to integers)
 - **Instance:** GPU recommended for training, CPU for inference
 - **Key Hyperparameters:** `num_topics`, `mini_batch_size`, `learning_rate`
 
-#### [[LDA]] (Latent Dirichlet Allocation)
+#### LDA (Latent Dirichlet Allocation)
 - **Type:** Unsupervised (NOT deep learning)
 - **Use Cases:** Topic modeling (similar to NTM)
 - **Input:** RecordIO-protobuf or CSV
@@ -183,7 +183,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 
 ### Computer Vision
 
-#### [[Object Detection]]
+#### Object Detection
 - **Type:** Supervised (CNN + SSD)
 - **Use Cases:** Identify objects with bounding boxes
 - **Input:** RecordIO or images with JSON annotations
@@ -193,7 +193,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 - **Instance:** GPU required (multi-GPU/multi-machine OK)
 - **Key Hyperparameters:** `mini_batch_size`, `learning_rate`, `optimizer`
 
-#### [[Image Classification]]
+#### Image Classification
 - **Type:** Supervised
 - **Use Cases:** Assign labels to images (NOT location)
 - **Input:** Images (default 224x224)
@@ -203,7 +203,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 - **Instance:** GPU (multi-GPU/multi-machine OK)
 - **Key Hyperparameters:** `batch_size`, `learning_rate`, `optimizer`
 
-#### [[Semantic Segmentation]]
+#### Semantic Segmentation
 - **Type:** Supervised
 - **Use Cases:** Pixel-level classification
 - **Input:** JPG images + PNG annotations
@@ -216,7 +216,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 
 ### Anomaly Detection
 
-#### [[Random Cut Forest]] (RCF)
+#### Random Cut Forest (RCF)
 - **Type:** Unsupervised (Amazon-developed)
 - **Use Cases:** Anomaly detection in time series
 - **Input:** RecordIO-protobuf or CSV
@@ -226,7 +226,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 - **Instance:** CPU only (M4, C4, C5)
 - **Key Hyperparameters:** `num_trees`, `num_samples_per_tree`
 
-#### [[IP Insights]]
+#### IP Insights
 - **Type:** Unsupervised
 - **Use Cases:** Detect suspicious IP behavior
 - **Input:** CSV only (Entity, IP)
@@ -240,7 +240,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 
 ### Embeddings & Recommendations
 
-#### [[Object2Vec]]
+#### Object2Vec
 - **Type:** Supervised
 - **Use Cases:** Create embeddings of arbitrary objects
 - **Input:** JSON lines (tokenized integer pairs)
@@ -250,7 +250,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 - **Instance:** Single machine only (CPU or GPU)
 - **Key Hyperparameters:** `enc1_network`, `enc2_network`, `dropout`
 
-#### [[Factorization Machines]]
+#### Factorization Machines
 - **Type:** Supervised
 - **Use Cases:** Recommendations with sparse data
 - **Input:** RecordIO-protobuf (Float32 only)
@@ -342,7 +342,7 @@ S3 Training Data → Model Training ← Training Code Image (ECR)
 ---
 
 ## Related Sections
-- [[02-data-ingestion]] - S3, data storage
-- [[03-data-transformation]] - Feature engineering, data prep
-- [[06-model-training]] - Training infrastructure, hyperparameter tuning
-- [[09-mlops]] - Model deployment, endpoints
+- [[02-data-ingestion/02-data-ingestion]] - S3, data storage
+- [[03-data-transformation/03-data-transformation]] - Feature engineering, data prep
+- [[06-model-training/06-model-training]] - Training infrastructure, hyperparameter tuning
+- [[09-mlops/09-mlops]] - Model deployment, endpoints

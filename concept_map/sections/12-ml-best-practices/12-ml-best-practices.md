@@ -14,7 +14,7 @@ This section covers best practices for designing, building, deploying, and monit
 
 ## Core Concepts
 
-### [[Responsible-AI]]
+### Responsible-AI
 
 **8 Core Dimensions:**
 | Dimension | Description | AWS Tool |
@@ -28,11 +28,11 @@ This section covers best practices for designing, building, deploying, and monit
 | **Governance** | Policies and procedures | ML Governance, Model Cards |
 | **Transparency** | Clear communication about AI use | Model Cards |
 
-**Related:** [[SageMaker-Clarify]], [[Amazon-Augmented-AI]], [[SageMaker-Model-Monitor]]
+**Related:** [[12-ml-best-practices#SageMaker-Clarify]], [[12-ml-best-practices#Amazon-Augmented-AI]], [[12-ml-best-practices#SageMaker-Model-Monitor]]
 
 ---
 
-### [[ML-Lifecycle]]
+### ML-Lifecycle
 
 **AWS-Defined ML Lifecycle:**
 ```
@@ -61,7 +61,7 @@ This section covers best practices for designing, building, deploying, and monit
 
 ---
 
-### [[ML-Design-Principles]]
+### ML-Design-Principles
 
 | Principle | Description | AWS Tools |
 |-----------|-------------|-----------|
@@ -79,7 +79,7 @@ This section covers best practices for designing, building, deploying, and monit
 
 ## AWS Services for ML Best Practices
 
-### [[SageMaker-Clarify]]
+### SageMaker-Clarify
 **Purpose:** Bias detection, model evaluation, explainability
 
 **Use Cases:**
@@ -88,11 +88,11 @@ This section covers best practices for designing, building, deploying, and monit
 - Review fairness metrics
 - Test trade-offs (bias vs. fairness)
 
-**Related:** [[SageMaker-Model-Monitor]], [[SageMaker-Experiments]]
+**Related:** [[12-ml-best-practices#SageMaker-Model-Monitor]], [[12-ml-best-practices#SageMaker-Experiments]]
 
 ---
 
-### [[SageMaker-Model-Monitor]]
+### SageMaker-Model-Monitor
 **Purpose:** Monitor deployed models for quality degradation
 
 **Monitors:**
@@ -101,11 +101,11 @@ This section covers best practices for designing, building, deploying, and monit
 - Bias drift
 - Feature attribution drift
 
-**Related:** [[SageMaker-Clarify]], [[CloudWatch]]
+**Related:** [[12-ml-best-practices#SageMaker-Clarify]], [[11-management-governance#CloudWatch]]
 
 ---
 
-### [[SageMaker-Feature-Store]]
+### SageMaker-Feature-Store
 **Purpose:** Centralized feature repository for consistency
 
 **Key Benefit:** Ensures feature consistency between training and inference
@@ -114,11 +114,11 @@ This section covers best practices for designing, building, deploying, and monit
 - Online Feature Store (low-latency)
 - Offline Feature Store (batch)
 
-**Related:** [[SageMaker-Pipelines]], [[SageMaker-Experiments]]
+**Related:** [[09-mlops#SageMaker-Pipelines]], [[12-ml-best-practices#SageMaker-Experiments]]
 
 ---
 
-### [[SageMaker-Pipelines]]
+### SageMaker-Pipelines
 **Purpose:** ML workflow orchestration and CI/CD/CT
 
 **Use Cases:**
@@ -127,11 +127,11 @@ This section covers best practices for designing, building, deploying, and monit
 - Automate deployment
 - Automated retraining framework
 
-**Related:** [[SageMaker-Model-Registry]], [[CloudFormation]]
+**Related:** [[09-mlops/09-mlops#Model-Registry]], [[09-mlops#CloudFormation]]
 
 ---
 
-### [[SageMaker-Experiments]]
+### SageMaker-Experiments
 **Purpose:** Track and compare model experiments
 
 **Use Cases:**
@@ -140,11 +140,11 @@ This section covers best practices for designing, building, deploying, and monit
 - Performance comparison
 - Organize training artifacts
 
-**Related:** [[SageMaker-Debugger]], [[SageMaker-Pipelines]]
+**Related:** [[06-model-training/06-model-training#SageMaker-Debugger]], [[09-mlops#SageMaker-Pipelines]]
 
 ---
 
-### [[Amazon-Augmented-AI]]
+### Amazon-Augmented-AI
 **Purpose:** Human-in-the-loop for AI/ML workflows
 
 **Use Cases:**
@@ -153,11 +153,11 @@ This section covers best practices for designing, building, deploying, and monit
 - Quality assurance
 - Compliance verification
 
-**Related:** [[SageMaker-Model-Monitor]], [[Ground-Truth]]
+**Related:** [[12-ml-best-practices#SageMaker-Model-Monitor]], [[03-data-transformation#Ground-Truth]]
 
 ---
 
-### [[SageMaker-Inference-Recommender]]
+### SageMaker-Inference-Recommender
 **Purpose:** Right-size inference endpoints
 
 **Provides:**
@@ -165,7 +165,7 @@ This section covers best practices for designing, building, deploying, and monit
 - Cost optimization
 - Performance benchmarks
 
-**Related:** [[SageMaker-AutoScaling]], [[CloudWatch]]
+**Related:** SageMaker-AutoScaling, [[11-management-governance#CloudWatch]]
 
 ---
 

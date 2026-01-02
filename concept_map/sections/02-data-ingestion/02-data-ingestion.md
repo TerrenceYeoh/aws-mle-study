@@ -5,25 +5,25 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 
 ## Core Concepts
 
-### [[Data Architecture Patterns]]
+### Data Architecture Patterns
 
 #### Data Warehouse
 - **Structured data** from operational systems
 - Schema defined upfront (schema-on-write)
 - Optimized for SQL queries and BI
-- AWS Service: [[Amazon Redshift]]
+- AWS Service: [[02-data-ingestion#Amazon-Redshift]]
 
 #### Data Lake
 - **Raw data** in any format (structured, semi-structured, unstructured)
 - Schema applied at read time (schema-on-read)
 - Low-cost storage for massive volumes
-- AWS Service: [[Amazon S3]]
+- AWS Service: [[02-data-ingestion#Amazon-S3]]
 
 #### Data Lakehouse
 - **Combines** Data Lake + Data Warehouse benefits
 - Raw storage with structured query layer
 - Supports both BI and ML workloads
-- AWS Services: S3 + [[AWS Glue]] + [[Amazon Athena]]
+- AWS Services: S3 + [[03-data-transformation#AWS-Glue]] + Amazon Athena
 
 #### Data Mesh
 - **Decentralized** data ownership by domain teams
@@ -31,7 +31,7 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 - Federated governance with central standards
 - Self-service data infrastructure
 
-### [[ETL vs ELT]]
+### ETL vs ELT
 
 | Aspect | ETL | ELT |
 |--------|-----|-----|
@@ -40,7 +40,7 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 | Flexibility | Less flexible | More flexible |
 | Best For | Traditional warehouses | Modern data lakes |
 
-### [[Data Formats]]
+### Data Formats
 
 | Format | Type | Best For | Key Feature |
 |--------|------|----------|-------------|
@@ -56,7 +56,7 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 
 ## AWS Storage Services
 
-### [[Amazon S3]] - Object Storage
+### Amazon S3 - Object Storage
 
 #### Key Characteristics
 - **Infinitely scalable** object storage
@@ -106,7 +106,7 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 
 ---
 
-### [[Amazon EBS]] - Block Storage
+### Amazon EBS - Block Storage
 
 - **Attached to single EC2** instance (except Multi-Attach io1/io2)
 - Network-attached, persists independently of instance
@@ -129,7 +129,7 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 
 ---
 
-### [[Amazon EFS]] - File Storage (NFS)
+### Amazon EFS - File Storage (NFS)
 
 - **Managed NFS** file system
 - **Multi-AZ** by default, shared across instances
@@ -148,7 +148,7 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 
 ---
 
-### [[Amazon FSx]] - High-Performance File Systems
+### Amazon FSx - High-Performance File Systems
 
 | FSx Type | Protocol | OS Support | Best For |
 |----------|----------|------------|----------|
@@ -166,7 +166,7 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 
 ## Real-Time Streaming Services
 
-### [[Amazon Kinesis Data Streams]]
+### Amazon Kinesis Data Streams
 
 - **Collect and store** streaming data in real-time
 - Retention: up to 365 days
@@ -189,7 +189,7 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 
 ---
 
-### [[Amazon Data Firehose]]
+### Amazon Data Firehose
 *Formerly: Kinesis Data Firehose*
 
 - **Load streaming data** to destinations
@@ -206,7 +206,7 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 
 ---
 
-### [[Kinesis Data Analytics]] / [[Managed Service for Apache Flink]]
+### Kinesis Data Analytics / Managed Service for Apache Flink
 
 - **Real-time analytics** on streaming data
 - SQL queries or custom Flink applications (Java, Python, Scala)
@@ -217,7 +217,7 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 
 ---
 
-### [[Amazon MSK]] - Managed Streaming for Apache Kafka
+### Amazon MSK - Managed Streaming for Apache Kafka
 
 - **Alternative to Kinesis** for Kafka workloads
 - Manages broker nodes and Zookeeper
@@ -301,6 +301,6 @@ This section covers AWS services and concepts for ingesting, storing, and stream
 ---
 
 ## Related Sections
-- [[03-data-transformation]] - Glue, EMR for processing
-- [[06-model-training]] - SageMaker training data sources
-- [[09-mlops]] - Data pipelines and automation
+- [[03-data-transformation/03-data-transformation]] - Glue, EMR for processing
+- [[06-model-training/06-model-training]] - SageMaker training data sources
+- [[09-mlops/09-mlops]] - Data pipelines and automation

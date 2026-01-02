@@ -15,12 +15,12 @@ This section covers AWS services for monitoring, logging, auditing, compliance, 
 
 ## Core Concepts
 
-### [[Monitoring-vs-Auditing-vs-Compliance]]
+### Monitoring-vs-Auditing-vs-Compliance
 - **Monitoring (CloudWatch):** Real-time performance metrics, logs, alarms
 - **Auditing (CloudTrail):** Who did what? API call history
 - **Compliance (Config):** Is the configuration correct? Does it meet rules?
 
-### [[Real-Time-vs-Near-Real-Time-vs-Batch]]
+### Real-Time-vs-Near-Real-Time-vs-Batch
 | Delivery Type | CloudWatch Feature | Latency |
 |--------------|-------------------|---------|
 | Real-time | Logs Subscriptions → Lambda | Immediate |
@@ -28,7 +28,7 @@ This section covers AWS services for monitoring, logging, auditing, compliance, 
 | Near-real-time | Metric Streams | Seconds |
 | Batch | S3 Export (CreateExportTask) | Up to 12 hours |
 
-### [[Distributed-Tracing]]
+### Distributed-Tracing
 - **Trace:** End-to-end path of a request through services
 - **Segment:** Individual component's contribution to trace
 - **Sub-segment:** Granular breakdown within segment
@@ -38,7 +38,7 @@ This section covers AWS services for monitoring, logging, auditing, compliance, 
 
 ## AWS Services
 
-### [[Amazon-CloudWatch]]
+### Amazon-CloudWatch
 
 **Purpose:** Centralized monitoring for AWS services and applications
 
@@ -66,11 +66,11 @@ Log Group (application-level)
 
 **Log Expiration:** 1 day to 10 years, or never expire
 
-**Related:** [[Kinesis-Data-Firehose]], [[S3]], [[Lambda]], [[SNS]]
+**Related:** Kinesis-Data-Firehose, [[02-data-ingestion#Amazon-S3]], [[09-mlops#AWS-Lambda]], [[02-data-ingestion#Amazon-SNS]]
 
 ---
 
-### [[CloudWatch-Unified-Agent]]
+### CloudWatch-Unified-Agent
 
 **Purpose:** Collect logs AND system-level metrics from EC2/on-premises
 
@@ -85,11 +85,11 @@ Log Group (application-level)
 
 **Configuration:** Centralized via **SSM Parameter Store**
 
-**Related:** [[CloudWatch-Logs-Agent]], [[SSM-Parameter-Store]]
+**Related:** CloudWatch-Logs-Agent, SSM-Parameter-Store
 
 ---
 
-### [[CloudWatch-Alarms]]
+### CloudWatch-Alarms
 
 **Purpose:** Trigger notifications and actions based on metric thresholds
 
@@ -115,11 +115,11 @@ Log Group (application-level)
 CloudWatch Logs → Metric Filter → Metric → Alarm → SNS
 ```
 
-**Related:** [[Auto-Scaling]], [[SNS]], [[EC2]]
+**Related:** [[06-model-training/06-model-training#Auto-Scaling]], [[02-data-ingestion#Amazon-SNS]], EC2
 
 ---
 
-### [[AWS-X-Ray]]
+### AWS-X-Ray
 
 **Purpose:** Distributed tracing for debugging microservices
 
@@ -142,11 +142,11 @@ CloudWatch Logs → Metric Filter → Metric → Alarm → SNS
 - IAM for authorization
 - KMS for encryption at rest
 
-**Related:** [[Lambda]], [[API-Gateway]], [[ECS]]
+**Related:** [[09-mlops#AWS-Lambda]], API-Gateway, [[09-mlops#ECS]]
 
 ---
 
-### [[Amazon-QuickSight]]
+### Amazon-QuickSight
 
 **Purpose:** Serverless business intelligence and analytics
 
@@ -186,13 +186,13 @@ CloudWatch Logs → Metric Filter → Metric → Alarm → SNS
 - Extra SPICE: $0.25-0.38/GB/month
 
 **Anti-Patterns:**
-- Heavy ETL (use [[Glue]] instead)
+- Heavy ETL (use [[03-data-transformation#AWS-Glue]] instead)
 
-**Related:** [[Athena]], [[Redshift]], [[S3]]
+**Related:** [[03-data-transformation#Amazon-Athena]], Redshift, [[02-data-ingestion#Amazon-S3]]
 
 ---
 
-### [[AWS-CloudTrail]]
+### AWS-CloudTrail
 
 **Purpose:** Audit trail of API calls in your AWS account
 
@@ -219,11 +219,11 @@ CloudWatch Logs → Metric Filter → Metric → Alarm → SNS
 - CloudTrail: 90 days
 - Long-term: S3 → Athena queries
 
-**Related:** [[S3]], [[Athena]], [[EventBridge]]
+**Related:** [[02-data-ingestion#Amazon-S3]], [[03-data-transformation#Amazon-Athena]], [[09-mlops#EventBridge]]
 
 ---
 
-### [[AWS-Config]]
+### AWS-Config
 
 **Purpose:** Configuration compliance auditing
 
@@ -257,11 +257,11 @@ CloudWatch Logs → Metric Filter → Metric → Alarm → SNS
 - $0.003 per config item recorded
 - $0.001 per rule evaluation
 
-**Related:** [[SSM]], [[Lambda]], [[EventBridge]]
+**Related:** SSM, [[09-mlops#AWS-Lambda]], [[09-mlops#EventBridge]]
 
 ---
 
-### [[AWS-Budgets]]
+### AWS-Budgets
 
 **Purpose:** Cost alerts when spending exceeds threshold
 
@@ -280,11 +280,11 @@ CloudWatch Logs → Metric Filter → Metric → Alarm → SNS
 - 2 budgets free
 - $0.02/day/budget after
 
-**Related:** [[Cost-Explorer]], [[SNS]]
+**Related:** [[11-management-governance#Cost-Explorer]], [[02-data-ingestion#Amazon-SNS]]
 
 ---
 
-### [[AWS-Cost-Explorer]]
+### AWS-Cost-Explorer
 
 **Purpose:** Visualize and analyze AWS costs
 
@@ -294,11 +294,11 @@ CloudWatch Logs → Metric Filter → Metric → Alarm → SNS
 - Savings Plan recommendations
 - **Forecast up to 12 months**
 
-**Related:** [[Budgets]], [[Trusted-Advisor]]
+**Related:** [[11-management-governance#AWS-Budgets]], [[11-management-governance#Trusted-Advisor]]
 
 ---
 
-### [[AWS-Trusted-Advisor]]
+### AWS-Trusted-Advisor
 
 **Purpose:** High-level AWS account assessment
 
@@ -314,7 +314,7 @@ CloudWatch Logs → Metric Filter → Metric → Alarm → SNS
 - Basic/Developer: Core checks only
 - Business/Enterprise: Full checks + API access
 
-**Related:** [[Cost-Explorer]], [[Budgets]]
+**Related:** [[11-management-governance#Cost-Explorer]], [[11-management-governance#AWS-Budgets]]
 
 ---
 
